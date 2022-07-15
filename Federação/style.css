@@ -1,0 +1,339 @@
+body{
+    background:url(img/bg.jfif);
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Limita largura e centraliza a página em larguras maiores. */
+    width: 100%;
+    max-width: 1080px;
+    min-width: 280px;
+    margin: auto;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background:black;
+}
+
+/* Logotipo usando "Font Awesome". */
+header a {
+    font-size: 70px;
+    color: white;
+    -webkit-text-stroke: 3px black;
+    padding-left: .5rem;
+    margin-top: -.5rem;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    margin-left: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .6rem;
+}
+
+header small {
+    display: block;
+    font-size: .75rem;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+header img{
+width: 100px;
+height: 100px;
+}
+
+
+
+.card{
+    color: black;
+}
+/**
+ * Conteúdo central.
+ */
+main {
+    /* Ativa "Sticky footer". */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main>section,
+main>aside,
+main>aside {
+    padding: 1rem;
+    color: white;
+}
+
+main>section {
+    flex-grow: 1;
+    background-color:black;
+}
+
+main>aside {
+    border-top: 3px dotted white;
+    background:black;
+}
+
+main>section>h2:first-child,
+main>aside>h3:first-child {
+    margin: 0;
+}
+
+/**
+ * Página inicial (/index.php).
+ */
+
+.item {
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 1rem;
+    border: 1px dotted white;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.items .item:last-child {
+    margin-bottom: 0;
+}
+
+.item .thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-attachment: local;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item .body {
+    padding: .5rem;
+}
+
+.item .body span {
+    font-size: .9rem;
+}
+
+.item h4 {
+    margin: 0 0 .25rem 0;
+}
+
+/**
+ * Estilos de uso geral.
+ * Podem ser aplicados em qualquer página do aplicativo.
+ */
+
+.text-center {
+    text-align: center;
+}
+
+.block-center {
+    display: table;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.user-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+hr.divider {
+    border: none;
+    border-top: 1px dotted grey;
+    border-bottom: 1px dotted grey;
+    height: 3px;
+    margin: 1rem 0;
+}
+
+/**
+ * Botões e campos de formulário.
+ * Podem ser aplicados em qualquer página do aplicativo.
+ */
+
+form label {
+    display: block;
+    margin-bottom: .25rem;
+    margin-left: .25rem;
+}
+
+form input,
+form textarea,
+form button,
+form button[onclick] {
+    font-family: inherit;
+    font-size: inherit;
+    padding: .25rem .5rem;
+    border: 1px solid white;
+    border-radius: .3rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+}
+
+form textarea {
+    height: 6rem;
+    resize: vertical;
+}
+
+form button,
+form button[onclick] {
+    background: steelblue;
+    color: white;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+form button:hover,
+form button[onclick]:hover {
+    background: orangered;
+}
+
+/* Marca campos inválidos. */
+
+form input:invalid,
+form textarea:invalid {
+    background: rgb(255, 207, 207);
+    border-bottom: 3px solid red;
+}
+
+/* Marca campos válidos. */
+
+form input:valid,
+form textarea:valid {
+    background: rgb(232, 240, 254);
+    border-bottom: 3px solid green;
+}
+
+/* Desabilita botão de envio se formulário está inválido. */
+
+form:invalid button {
+    background: rgb(88, 88, 88);
+    color: rgb(219, 219, 219);
+    cursor: not-allowed;
+}
+
+form input[type="checkbox"] {
+    width: auto;
+}
+
+form input.password {
+    max-width: 50%;
+}
+
+/* Botão que mostra/oculta senha. */
+
+form button[id="passToggle"],
+form button[id="newPassToggle"] {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+/**
+ * Responsividade.
+ * Largura >= 426px.
+ */
+
+@media (min-width: 426px) {
+
+    .items {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 1rem;
+        margin-right: 1rem;
+    }
+
+}
+
+/**
+ * Responsividade.
+ * Largura >= 576px.
+ */
+
+@media (min-width: 576px) {
+
+    .items {
+        display: block;
+        margin: 0;
+    }
+
+    .item {
+        display: flex;
+    }
+
+    .item .thumb {
+        width: 15%;
+    }
+
+}
+
+/**
+ * Responsividade.
+ * Largura >= 768px.
+ */
+
+@media (min-width: 768px) {
+
+    main {
+        flex-direction: row;
+    }
+
+    main>aside {
+        border-top: none;
+        border-left: 3px dotted grey;
+        flex: 0 0 200px;
+    }
+
+}
+
+/**
+ * Artigos mais visitados na barra lateral.
+ */
+.side-art-box {
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.side-art-title {
+    font-weight: bold;
+}
+
+.side-art-title:hover {
+    color: steelblue;
+}
+
+.side-art-intro {
+    font-size: small;
+}
+
+/**
+ * Lista de redes sociais na barra lateral.
+ */
+.aside-social-box {
+    margin-top: 1rem;
+}
+
+.aside-social-box a {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.aside-social-box i {
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
